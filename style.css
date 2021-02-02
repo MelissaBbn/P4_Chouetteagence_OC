@@ -74,7 +74,7 @@ a:hover {
     right: 0;
 }
 .texture-paper::before {
-    background: url("img/texture-paper-compress.png");
+    background: url("img/texture-paper-compress.webp");
     background-size: 280px 280px;
 }
 .b-parallax {
@@ -779,16 +779,16 @@ h4 {
     border-color: #364577!important;
 }
 .bg-dots-bg {
-    background-image: url("img/dots-bg-compress.png");
+    background-image: url("img/dots-bg-compress.webp");
 }
 .bg-lines-h2-bg {
-    background-image: url("img/lines-h2-bg-compress.png");
+    background-image: url("img/lines-h2-bg-compress.webp");
 }
 .bg-banniere {
-    background-image: url("img/img-banniere-compress.jpg");
+    background-image: url("img/img-banniere-compress.webp");
 }
 .bg-presentation {
-    background-image: url("img/image-presentation-compress.jpg");
+    background-image: url("img/image-presentation-compress.webp");
 }
 .portfolio-thumb
     {
