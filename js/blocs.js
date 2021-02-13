@@ -53,17 +53,6 @@ function setFillScreenBlocHeight() {
     })
 }
 
-function getFillHeight() {
-    var t = $(window).height();
-    return t < fillBodyHeight && (t = fillBodyHeight + 100), t
-}
-
-function scrollToTarget(t) {
-    1 == t ? t = 0 : 2 == t ? t = $(document).height() : (t = $(t).offset().top, $(".sticky-nav").length && (t -= $(".sticky-nav .navbar-header").height())), $("html,body").animate({
-        scrollTop: t
-    }, "slow"), $(".navbar-collapse").collapse("hide")
-}
-
 function animateWhenVisible() {
     hideAll(), inViewCheck(), $(window).scroll(function() {
         inViewCheck(), scrollToTopView(), stickyNavToggle()
@@ -76,16 +65,6 @@ function setUpDropdownSubs() {
         var e = $(this).parent().children(".dropdown-menu");
         e.offset().left + e.width() > $(window).width() && e.addClass("dropmenu-flow-right")
     })
-}
-
-function stickyNavToggle() {
-    var t = 0,
-        e = "sticky";
-    if ($(".sticky-nav").hasClass("fill-bloc-top-edge")) {
-        var i = $(".fill-bloc-top-edge.sticky-nav").parent().css("background-color");
-        "rgba(0, 0, 0, 0)" == i && (i = "#FFFFFF"), $(".sticky-nav").css("background", i), t = $(".sticky-nav").height(), e = "sticky animated fadeInDown"
-    }
-    $(window).scrollTop() > t ? ($(".sticky-nav").addClass(e), "sticky" == e && $(".page-container").css("padding-top", $(".sticky-nav").height())) : ($(".sticky-nav").removeClass(e).removeAttr("style"), $(".page-container").removeAttr("style"))
 }
 
 function hideAll() {
@@ -106,10 +85,6 @@ function inViewCheck() {
             }, .01)
         }
     })
-}
-
-function scrollToTopView() {
-    $(window).scrollTop() > $(window).height() / 3 ? $(".scrollToTop").hasClass("showScrollTop") || $(".scrollToTop").addClass("showScrollTop") : $(".scrollToTop").removeClass("showScrollTop")
 }
 
 function setUpVisibilityToggle() {
@@ -177,17 +152,6 @@ function addKeyBoardSupport() {
     })
 }
 
-function addLightBoxSwipeSupport() {
-    $("#lightbox-image").length && $("#lightbox-image").swipe({
-        swipeLeft: function(t, e, i, a, o) {
-            $(".next-lightbox").is(":visible") && $(".next-lightbox").click()
-        },
-        swipeRight: function() {
-            $(".prev-lightbox").is(":visible") && $(".prev-lightbox").click()
-        },
-        threshold: 0
-    })
-}
 $(document).ready(function() {
     $("#scroll-hero").click(function(t) {
         t.preventDefault(), $("html,body").animate({
